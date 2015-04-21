@@ -10,7 +10,7 @@ module Github
 
     def members(org)
       p self.class
-      headers = {access_token: "28c129ed075d1c81ec9cd4b37e2c7b80edbf457b", user_agent: "juan"}
+      headers = {access_token: ENV["ACCESS_TOKEN"], user_agent: "juan"}
       response = self.class.get("/orgs/#{org}/members?per_page=100", headers)
       return response
     end
